@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import UserBalance from '@/components/UserBalance.vue'
 import LastWeekExpensesChart from '@/components/LastWeekExpensesChart.vue'
 import TransactionItem from '@/components/TransactionItem.vue'
@@ -7,12 +6,6 @@ import TransactionFloaters from '@/components/TransactionFloaters.vue'
 import { useTransactionStore } from '@/stores/transaction'
 
 const transactionStore = useTransactionStore()
-
-const balance = ref(1412.64)
-
-const balanceFormatted = (balance: number) => {
-  return balance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-}
 </script>
 
 <template>

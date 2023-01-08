@@ -48,7 +48,7 @@ const chartOptions = {
   },
   dataLabels: {
     enabled: true,
-    formatter: function (val, opts) {
+    formatter: (val: number) => {
       return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
     },
     style: {
