@@ -11,8 +11,8 @@ const transactionStore = useTransactionStore()
 <template>
   <div class="mb-32">
     <header class="flex flex-col items-center justify-center bg-black px-3 pt-3">
-      <div class="flex items-center justify-center mb-2">
-        <p class="text-xl text-white">Janeiro</p>
+      <div class="flex items-center justify-center mb-3">
+        <p class="text-2xl text-white">Janeiro</p>
       </div>
 
       <UserBalance></UserBalance>

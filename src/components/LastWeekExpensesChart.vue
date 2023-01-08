@@ -53,7 +53,7 @@ const chartOptions = {
     },
     style: {
       fontSize: '11px',
-      fontWeight: 'thin'
+      fontWeight: 'regular'
     },
     background: {
       enabled: false,
@@ -82,7 +82,7 @@ const chartOptions = {
     labels: {
       offsetY: -3,
       style: {
-        colors: '#4B5563'
+        colors: '#9BA3AF'
       }
     }
   },
