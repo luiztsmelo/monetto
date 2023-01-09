@@ -14,7 +14,7 @@ const config = {
   disableNegative: false,
   disabled: false,
   min: 0,
-  max: 0,
+  max: undefined,
   allowBlank: false,
   minimumNumberOfCharacters: 0
 }
