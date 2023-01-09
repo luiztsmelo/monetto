@@ -13,8 +13,8 @@ const config = {
   precision: 2,
   disableNegative: false,
   disabled: false,
-  min: null,
-  max: null,
+  min: 0,
+  max: 0,
   allowBlank: false,
   minimumNumberOfCharacters: 0
 }
