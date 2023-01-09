@@ -36,7 +36,7 @@ const config = {
   </div>
 
   <Transition name="fade">
-    <div class="fixed left-0 right-0 bottom-0 w-full h-full bg-[rgba(0,0,0,0.3)] z-40" v-if="modal"></div>
+    <div class="fixed left-0 right-0 bottom-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-40" v-if="modal"></div>
   </Transition>
 
   <Transition name="slide-y">
@@ -56,7 +56,7 @@ const config = {
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.8s ease;
+  transition: opacity 0.6s ease;
 }
 
 .fade-enter-from,
