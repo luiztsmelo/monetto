@@ -39,7 +39,7 @@ async function save() {
 
 <template>
   <button
-    class="fixed right-4 bottom-[62px] flex items-center justify-center bg-black p-4 h-16 w-16 rounded-full active:scale-[0.93] transition duration-[250] ease-[cubic-bezier(.4,0,.2,1)] drop-shadow-md shadow-xl"
+    class="fixed right-4 bottom-[64px] flex items-center justify-center bg-black p-4 h-16 w-16 rounded-full active:scale-[0.93] transition duration-[250] ease-[cubic-bezier(.4,0,.2,1)] drop-shadow-md shadow-xl"
     @click="modal = true"
   >
     <span class="material-icons-round !text-4xl text-white">add</span>

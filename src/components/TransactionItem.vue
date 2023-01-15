@@ -53,14 +53,14 @@ const categoryText = (category: string) => {
 
     <div>
       <p class="font-medium text-md">{{ props.transaction.description }}</p>
-      <p class="text-sm text-gray-500">{{ categoryText(props.transaction.category) }}</p>
+      <p class="text-sm text-neutral-500">{{ categoryText(props.transaction.category) }}</p>
     </div>
 
     <div class="flex flex-col items-end">
       <p :class="`font-medium text-md ${props.transaction.type === 'income' ? 'text-blue-700' : 'text-red-700'}`">
         {{ props.transaction.amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
       </p>
-      <p class="text-sm text-gray-500">{{ dayjs(props.transaction.created_at).format('D MMM[.] HH:mm') }}</p>
+      <p class="text-sm text-neutral-500">{{ dayjs(props.transaction.created_at).format('D MMM[.] HH:mm') }}</p>
     </div>
   </div>
 </template>

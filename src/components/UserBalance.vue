@@ -9,7 +9,7 @@ const balanceFormatted = (balance: number) => {
 </script>
 
 <template>
-  <p class="text-xs font-medium text-gray-400 uppercase tracking-widest">Saldo</p>
+  <p class="text-xs font-medium text-neutral-400 uppercase tracking-widest">Saldo</p>
 
   <p class="text-4xl text-white">
     {{ balanceFormatted(userStore.user.balance) }}
