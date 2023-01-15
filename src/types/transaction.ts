@@ -3,6 +3,6 @@ export interface Transaction {
   description: string
   category: string
   amount: number
-  createdAt: Date
+  created_at: string
   type: string
 }

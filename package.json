@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
@@ -14,7 +14,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.4.0",
     "apexcharts": "^3.36.3",
+    "dayjs": "^1.11.7",
     "material-icons": "^1.13.1",
     "pinia": "^2.0.28",
     "pug": "^3.0.2",

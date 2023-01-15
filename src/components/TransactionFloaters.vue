@@ -41,12 +41,14 @@ const config = {
 
   <Transition name="slide-y">
     <div
-      class="fixed left-0 right-0 bottom-0 flex flex-col items-center justify-between w-full min-h-[50%] rounded-4xl bg-white p-6 z-50"
+      class="fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center w-[90%] rounded-xl bg-white p-5 z-50 gap-4"
       v-if="modal"
     >
-      <InputMoney v-model="amount" v-bind="config" class="w-full rounded-lg p-3 bg-gray-100 text-2xl">{{
+      <InputMoney v-model="amount" v-bind="config" class="w-full rounded-lg p-3 bg-gray-100 text-xl">{{
         amount
       }}</InputMoney>
+
+      <input type="text" placeholder="Descrição" class="w-full rounded-lg p-3 bg-gray-100 text-md" />
 
       <button class="bg-black text-white py-3 px-6 rounded-xl w-full" @click="modal = false">Salvar despesa</button>
     </div>
@@ -56,7 +58,7 @@ const config = {
 <style>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.6s ease;
+  transition: opacity 0.3s ease;
 }
 
 .fade-enter-from,
@@ -74,6 +76,6 @@ const config = {
 
 .slide-y-enter-from,
 .slide-y-leave-to {
-  transform: translateY(100%);
+  transform: translate(100%);
 }
 </style>

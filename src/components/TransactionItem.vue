@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import dayjs from 'dayjs'
 import type { PropType } from 'vue'
 import type { Transaction } from '@/types/transaction'
 
@@ -59,7 +60,7 @@ const categoryText = (category: string) => {
       <p :class="`font-medium text-md ${props.transaction.type === 'income' ? 'text-blue-700' : 'text-red-700'}`">
         {{ props.transaction.amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
       </p>
-      <p class="text-sm text-gray-500">07 Jan. 20:23</p>
+      <p class="text-sm text-gray-500">{{ dayjs(props.transaction.created_at).format('D MMM[.] HH:mm') }}</p>
     </div>
   </div>
 </template>

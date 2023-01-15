@@ -6,6 +6,8 @@ import TransactionFloaters from '@/components/TransactionFloaters.vue'
 import { useTransactionStore } from '@/stores/transaction'
 
 const transactionStore = useTransactionStore()
+
+transactionStore.fetchTransactions()
 </script>
 
 <template>
