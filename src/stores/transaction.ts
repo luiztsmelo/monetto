@@ -92,7 +92,7 @@ export const useTransactionStore = defineStore('transaction', () => {
       }
 
       console.log('created a new todo')
-      return data
+      return data as unknown as Transaction
     } catch (err) {
       alert('Error')
       console.error('Unknown problem inserting to db', err)
