@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Money3Component as InputMoney } from 'v-money3'
+import { useTransactionStore } from '@/stores/transaction'
+import dayjs from 'dayjs'
+
+const transactionStore = useTransactionStore()
 
 const modal = ref(false)
 const amount = ref(0)
@@ -18,22 +22,28 @@ const config = {
   allowBlank: false,
   minimumNumberOfCharacters: 0
 }
+
+async function save() {
+  /* await transactionStore.addTransaction({
+    id: '',
+    created_at: dayjs().format(),
+    description: 'Porpino',
+    category: 'food',
+    type: 'expense',
+    amount: 53.67
+  }) */
+
+  modal.value = false
+}
 </script>
 
 <template>
-  <div class="fixed left-6 right-6 bottom-6 flex items-center justify-center gap-12">
-    <button
-      class="flex items-center justify-center bg-black p-4 h-16 w-16 rounded-full active:scale-[0.93] transition duration-[250] ease-[cubic-bezier(.4,0,.2,1)] drop-shadow-md shadow-xl"
-    >
-      <span class="material-icons-round !text-4xl text-white">add</span>
-    </button>
-    <button
-      class="flex items-center justify-center bg-black p-4 h-16 w-16 rounded-full active:scale-[0.93] transition duration-[250] ease-[cubic-bezier(.4,0,.2,1)] drop-shadow-md shadow-xl"
-      @click="modal = true"
-    >
-      <span class="material-icons-round !text-4xl text-white">remove</span>
-    </button>
-  </div>
+  <button
+    class="fixed right-4 bottom-[62px] flex items-center justify-center bg-black p-4 h-16 w-16 rounded-full active:scale-[0.93] transition duration-[250] ease-[cubic-bezier(.4,0,.2,1)] drop-shadow-md shadow-xl"
+    @click="modal = true"
+  >
+    <span class="material-icons-round !text-4xl text-white">add</span>
+  </button>
 
   <Transition name="fade">
     <div class="fixed left-0 right-0 bottom-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-40" v-if="modal"></div>
@@ -44,13 +54,14 @@ const config = {
       class="fixed left-0 right-0 bottom-0 flex flex-col items-center justify-between w-full min-h-[50%] rounded-4xl bg-white p-6 z-50"
       v-if="modal"
     >
+      <span class="text-lg font-medium">Nova despesa</span>
       <InputMoney v-model="amount" v-bind="config" class="w-full rounded-lg p-3 bg-gray-100 text-2xl">{{
         amount
       }}</InputMoney>
 
       <input type="text" placeholder="Descrição" class="w-full rounded-lg p-3 bg-gray-100 md" />
 
-      <button class="bg-black text-white py-3 px-6 rounded-xl w-full" @click="modal = false">Salvar despesa</button>
+      <button class="bg-black text-white py-3 px-6 rounded-xl w-full" @click="save">Salvar despesa</button>
     </div>
   </Transition>
 </template>

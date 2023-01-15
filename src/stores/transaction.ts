@@ -2,6 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { supabase } from '@/plugins/supabase'
 import type { Transaction } from '@/types/transaction'
+import { v4 as uuidv4 } from 'uuid'
 
 export const useTransactionStore = defineStore('transaction', () => {
   const transactions = ref<Transaction[]>([])
@@ -83,7 +84,9 @@ export const useTransactionStore = defineStore('transaction', () => {
 
   async function addTransaction(transaction: Transaction): Promise<null | Transaction> {
     try {
-      const { data, error } = await supabase.from('todos').insert(transaction).single()
+      transaction.id = uuidv4()
+
+      const { data, error } = await supabase.from('transactions').insert(transaction).single()
 
       if (error) {
         alert(error.message)
@@ -91,7 +94,10 @@ export const useTransactionStore = defineStore('transaction', () => {
         return null
       }
 
-      console.log('created a new todo')
+      console.log('created a new transaction')
+
+      transactions.value.push(data as unknown as Transaction)
+
       return data as unknown as Transaction
     } catch (err) {
       alert('Error')
