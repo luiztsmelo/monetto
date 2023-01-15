@@ -25,12 +25,10 @@ const links = [
   >
     <RouterLink v-for="link in links" :key="link.route" :to="link.route">
       <span
-        class="material-icons-round !text-3xl"
+        class="material-icons-round !text-3xl transition duration-300 ease"
         :class="route.path === link.route ? 'text-black' : 'text-neutral-400'"
         >{{ link.icon }}</span
       >
     </RouterLink>
   </div>
 </template>
-
-<style></style>
